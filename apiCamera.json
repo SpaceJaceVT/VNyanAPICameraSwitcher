@@ -1,0 +1,123 @@
+{
+    "graphName": "ApiCamera",
+    "graphIsActive": true,
+    "nodes": [
+        {
+            "id": "cb0e203f-8326-4277-acdd-c1a5d2f47bab",
+            "values": [
+                {
+                    "key": "action",
+                    "value": "camera"
+                },
+                {
+                    "key": "dict",
+                    "value": "cameraD"
+                }
+            ],
+            "posX": -327.0,
+            "posY": 115.0,
+            "path": "Nodes/APIMessageNode",
+            "inputSocketIds": [],
+            "outputSocketIds": [
+                "aadf6c06-986e-48e4-ab88-011a2ece1ca7638487079702652152"
+            ],
+            "headerColor": 0
+        },
+        {
+            "id": "4f871cc0-511c-4e6f-86f6-79909d48eaae",
+            "values": [
+                {
+                    "key": "camera",
+                    "value": "<cameraNum>"
+                },
+                {
+                    "key": "duration",
+                    "value": "500"
+                }
+            ],
+            "posX": 170.0,
+            "posY": 9.999992370605469,
+            "path": "Nodes/CameraNode",
+            "inputSocketIds": [
+                "03a10b99-7e56-47e6-a044-40d6c9ee1b70638487084674801655"
+            ],
+            "outputSocketIds": [],
+            "headerColor": 0
+        },
+        {
+            "id": "14831a03-3ddb-463c-b100-a21b51922f84",
+            "values": [
+                {
+                    "key": "dictionary",
+                    "value": "cameraD"
+                },
+                {
+                    "key": "keyName",
+                    "value": "cameranumber"
+                },
+                {
+                    "key": "param",
+                    "value": "cameraNum"
+                }
+            ],
+            "posX": 168.66665649414063,
+            "posY": 220.33334350585938,
+            "path": "Nodes/GetDictionaryValueNode",
+            "inputSocketIds": [
+                "b1e0a333-e6d7-4b78-9a21-45709d7c1a27638487085735594993"
+            ],
+            "outputSocketIds": [],
+            "headerColor": 0
+        },
+        {
+            "id": "cf72c506-499e-4754-958d-1b9454d65e46",
+            "values": [],
+            "posX": -93.0,
+            "posY": 113.00001525878906,
+            "path": "Nodes/Ordered5Node",
+            "inputSocketIds": [
+                "157dbbb0-aa4a-41f8-92c7-611de685e602638487086527905570"
+            ],
+            "outputSocketIds": [
+                "dc741bfa-6cc7-4bcc-baed-6fe8be2b24ad638487086527905570",
+                "067a2f36-e976-441f-8b6c-600c9799cc6d638487086527905570",
+                "79d3ea3c-7d58-44af-9d98-e60f57845e4b638487086527905570",
+                "31cc4ac1-80f8-4c84-a127-c0d97940c477638487086527905570",
+                "ad38008b-ba23-4cd9-8545-3f5987027b12638487086527905570"
+            ],
+            "headerColor": 0
+        },
+        {
+            "id": "f306524f-95b9-4cb6-81f3-4a1cbed82416",
+            "values": [
+                {
+                    "key": "message",
+                    "value": "A simple camera switcher for use with VNyan's API.\nTo use with streamdeck: \u000BAdd an HTTP Request button\nSet the URL to http://localhost:8069\nSet Methot to POST\nSet Content Type to application/json\nCopy and paste the example body below into the Body field.\n\nChange the value for cameranumber to the camera you want to switch to.\n\nExample body:\n{\r\n \"action\":\"camera\",\r\n \"payload\":\r\n  {\r\n    \"cameranumber\":\"1\"\r\n  }\r\n}"
+                }
+            ],
+            "posX": -245.66651916503907,
+            "posY": -166.3328857421875,
+            "path": "Nodes/MessageBoxNode",
+            "inputSocketIds": [],
+            "outputSocketIds": [],
+            "headerColor": 3
+        }
+    ],
+    "connections": [
+        {
+            "id": "a20625d6-eeff-4d23-bf1d-0a651c71c87c",
+            "outputSocketId": "aadf6c06-986e-48e4-ab88-011a2ece1ca7638487079702652152",
+            "inputSocketId": "157dbbb0-aa4a-41f8-92c7-611de685e602638487086527905570"
+        },
+        {
+            "id": "800ab44a-f657-49a2-b021-bcf9393198d3",
+            "outputSocketId": "79d3ea3c-7d58-44af-9d98-e60f57845e4b638487086527905570",
+            "inputSocketId": "03a10b99-7e56-47e6-a044-40d6c9ee1b70638487084674801655"
+        },
+        {
+            "id": "ee2bd9ac-7eab-4513-82c3-aee986a76f52",
+            "outputSocketId": "dc741bfa-6cc7-4bcc-baed-6fe8be2b24ad638487086527905570",
+            "inputSocketId": "b1e0a333-e6d7-4b78-9a21-45709d7c1a27638487085735594993"
+        }
+    ]
+}
